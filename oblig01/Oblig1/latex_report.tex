@@ -1,0 +1,152 @@
+\documentclass{article}
+
+\usepackage{fancyvrb}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+\title{Obligatorisk innlevering 1 hOsten 2014, INF3331}
+\author{
+  Dawood Ahmad - 
+  \texttt{<dawood11@hotmail.com> (git bruker)}
+  \and
+  dawoodah - 
+  \texttt{<dawoodah@student.matnat.uio.no>}
+ }
+\date{\today}
+
+\begin{document}
+\maketitle
+\section*{Del 1: Bash}
+
+
+\begin{Verbatim}
+Dette gjelder alle oppgavene i Del 1:
+\end{Verbatim}
+Grunnen for at det er ../ i bash filene ved parameterne, er fordi oppgave filene ligger i mappa foran enn der filetree ligger.
+For A kunne kjOre disse filene uten A endre pA noe, mA file\_tree ligge et "hakk" bak directory'et til oppgave filene.
+
+
+\section*{Oppgave 1.1}
+
+\begin{Verbatim}
+Oppgaven lOst ved bruk av fOlgende komandoer:
+find ../$1 -type f -mtime -$2 | xargs du | sort -n
+\end{Verbatim}
+- Find for A kunne finne (parameter 1 mappen)\hfill \break
+- type f er for A kunne spesifisere at dette er en fil\hfill \break
+- mtime (parameter2) sjekker alderen pA filen\hfill \break
+- Den sjekker deretter fil stOrrelsen til filene med du og sorterer dem.
+
+\subsection*{KjOring}
+
+\begin{Verbatim}
+1x-193-157-193-203:Oblig1 Dawood$ sh Oppgave1.1.sh file_tree 200
+16	../file_tree/.DS_Store
+72	../file_tree/Kq0Wv/MH/zWG/Exw0zNwi
+72	../file_tree/Pkvye/htZiVgRE
+80	../file_tree/Kq0Wv/MH/zWG/LwgfcJ8
+96	../file_tree/Kq0Wv/5RYWI5kQ
+208	../file_tree/Kq0Wv/MH/7GvTL2y
+352	../file_tree/Kq0Wv/MH/zWG/1zeD9ON
+368	../file_tree/zg/grYxji7
+416	../file_tree/_CVcim
+424	../file_tree/fJgme5F
+464	../file_tree/Pkvye/vlfN/oHT/y2JjEL3A
+800	../file_tree/LGPbdlRW
+1072	../file_tree/Kq0Wv/MH/_Oj2c0QA
+1128	../file_tree/zg/Hu/dNmOlK
+1288	../file_tree/Kq0Wv/MH/XhdhBbk
+1560	../file_tree/Kq0Wv/MH/Z9kP8NB
+1560	../file_tree/Pkvye/vlfN/ZLbGhCmj
+\end{Verbatim}
+
+\section*{Oppgave 1.2}
+\begin{Verbatim}
+grep -r -l $2 ../$1
+\end{Verbatim}
+- grep printer ut de filene som inneholder ordet (parameter 2) fra filen (parameter 1)\hfill \break
+- Pass pA at oppgave 1.2 er lOst fOr Oppgave 1.3, ellers vil ikke enkelte filer funnetfordi de ble slettet av Oppgave 1.3
+
+\subsection*{KjOring}
+\begin{Verbatim}
+1x-193-157-193-203:Oblig1 Dawood$ sh Oppgave1.2.sh file_tree what
+../file_tree/Pkvye/vlfN/ZLbGhCmj
+\end{Verbatim}
+
+\section*{Oppgave 1.3}
+\begin{Verbatim}
+echo deleting...\\
+find ../$1 -type f -size +$2k\\
+find ../$1 -type f -size +$2k -delete\\
+echo deleted!!!
+\end{Verbatim}
+- Akkurat samme funksjon som oppgave 1.1, men her finner den fOrst alle filene som er stOrre enn 2 kilobyte. Deretter sletter den di funnede filene.\hfill \break
+- Pass pA at oppgave 1.2 er lOst fOr Oppgave 1.3, ellers vil ikke enkelte filer funnet
+fordi de ble slettet av Oppgave 1.3.
+
+
+\subsection*{KjOring}
+
+\begin{Verbatim}
+1x-193-157-252-91:Oblig1 Dawood$ sh Oppgave1.3.sh file_tree 750
+deleting...
+../file_tree/Kq0Wv/MH/Z9kP8NB
+../file_tree/Kq0Wv/MH/zWG/8puxfjS
+../file_tree/Pkvye/vlfN/ZLbGhCmj
+../file_tree/zg/Hu/vv/2KKnyIt5
+deletet!!!
+\end{Verbatim}
+
+\section*{Oppgave 1.4}
+
+\begin{Verbatim}
+sort ../$1 -o $2
+cat $2
+\end{Verbatim}
+Den tar inn parameter 1, som er den usorterte filen, sorterer den og deretter skriver det ut pA en ny fil og samtidig skriver ut resultatet til terminalen
+
+\subsection*{KjOring}
+
+\begin{Verbatim}
+1x-193-157-252-91:Oblig1 Dawood$ sh Oppgave1.4.sh unsorted_fruits sorted_fruits
+apple
+grape
+orange
+pear
+pineapple
+\end{Verbatim}
+
+
+
+
+
+\section*{Del 2: Python}
+
+\begin{Verbatim}
+1x-193-157-193-203:oblig01 Dawood$  python my_generate_file_tree.py file_tree 3 3
+\end{Verbatim}
+Jeg har tatt i bruk malen som var vedlagt pA kursets nettside.
+
+I denne kildefilen har jeg fylt ut de oppgitte metodene for A kunne oppfylle de oppgitte kravene.
+for A kunne generere tilfeldige strenger, har jeg benyttet meg av pakken Random.
+
+\begin{Verbatim}
+' rnd_str = prefix.join(random.choice(legal_chars) for _ in range(length))
+return rnd_str '
+\end{Verbatim}
+
+For A kunne begrense hvor dypt dette treet skal gA og antall mapper som skal kunne opprettes
+har jeg benyttet meg av den innebygde funksjonen random.randrange() fra pakken Random.
+
+For at dette treet skal kunne opprettes rekursivt har jeg opprettet min egen metode:
+\begin{Verbatim}
+' def make_Dir_tree(target, dir_depth, dirs, verbose): '
+\end{Verbatim}
+Jeg har valgt A slett walk funksjonen, fordi det opprettes mapper og legges
+til filer med umiddelbart, fOr det fortsettes til neste mappe.
+metodene make\_Dir\_tree og populate\_tree gAr rekursivt inn i mappene og trekker fra dir\_depth eller antall files for iterasjon.
+
+\end{document}
+
+
+
