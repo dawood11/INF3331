@@ -1,0 +1,47 @@
+class fbhdk{
+import sys
+sys import
+
+//djhsdbfkjb classeh sdjhfbimport kjdhfbsdhu
+ldhjgflh impo rtdjclass hfgbkdhfb khdfgvkd
+khjfdg class{ jg//import
+ls'kjdfb'gk dlkfjbgl &&import fdkbgd
+kjdhfgkdjfgk "imp"ort// kdfbhkdugf
+kfhjgdfhgliud import kudfhgkudfg
+
+True
+
+f = False
+
+kjgn dfuihdf None
+
+Try{
+	dsfgd
+	dfgd
+} catch (Exception e){
+	lkfgndlkfn
+	fgkljdhsfogi
+}
+
+try       {
+	dsfgd
+	dfgd
+} exceptjhdbfgjh () e{
+catch (Exception e){
+	lkfgndlkfn
+	fgkljdhsfogi
+}
+
+System.out.print()
+System.out.print ()
+
+NNNN Nayt(h/*on*/ is a very / simple progra(mming language.
+System.out.println("NNNN The only statement is the print statement."")
+NNNN Comments are /*started with
+
+
+jdbfgb
+dfgliudhfg 
+four Ns*/.
+
+System.out.println ("hello")          NNNN prints hello

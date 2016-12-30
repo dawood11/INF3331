@@ -1,0 +1,9 @@
+"\bclass\s": class
+"(\A|\s)import\s": import
+"/\*(.|\n)*?nem\*/|//.*(?:$|\n)": comments
+"[\A\s]for\b": for
+"[\A\s]while\b": while
+"[\A\s](if|else)\b": if/else
+"[\A\s]System.out.prin(tln|t)": print
+"\b(true|TRUE|false|FALSE)\b": True/False
+"'(.|\\t)'": char

@@ -1,0 +1,3 @@
+report3.txt
+Her er det en liten bug som sier at det er index out of bound.
+Matte beregningen er riktig, men her er enten rekkefølgen feil eller en liten slurve feil av meg som jeg ikke finner.

@@ -2,49 +2,55 @@
 
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-\usepackage{fancyvrb}
+
+%@var lang=python
 
 \begin{document}
-
 
 \section*{Code import}
 
 \begin{Verbatim}
-    out = 1.
-    for o in xrange(2, order+1):
-        out *= o
-    return out
+    out = 1.\n    for o in xrange(2, order+1):\n        out *= o\n    return out
 \end{Verbatim}
 
 \section*{Code execution}
 
-\vspace{4pt}
 \begin{Verbatim}
 $ python script_example.py 4
 24.0
 \end{Verbatim}
-\noindent
+
 
 \section*{Fake import}
 
-\begin{Verbatim}
-This could be code.
-\end{Verbatim}
+%@verb
+\input test.py
+%@
 
 \section*{Fake execusion}
 
-\begin{Verbatim}
-$ python fake_name.py
-24.0
-\end{Verbatim}
-\noindent
+%@python fake_name.py
+out = 1.
+for o in xrange(2, 4):
+    out *= o
+print out
+%@
 
 \section*{Branching}
 
+%@show lang==matlab
+%@verb
+for i=1:10
+    i
+end
+%@
+%@end
 
-\begin{Verbatim}
+%@show lang==python
+%@verb
 for i in xrange(10):
     print i+1
-\end{Verbatim}
+%@
+%@fi
 
 \end{document}

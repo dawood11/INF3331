@@ -1,0 +1,8 @@
+"(\A|\s)#include\s": include
+"/\*(.|\n)*?\*/|//.*(?:$|\n): comments
+"'.'|'\\.'": char
+"\b(true|TRUE|false|FALSE)\b": True/False
+"[\A\s](fp|p)rintf\b": print
+"[\A\s]for\b": for
+"[\A\s]while\b": while
+"[\A\s](if|else)\b": if/elseif/else

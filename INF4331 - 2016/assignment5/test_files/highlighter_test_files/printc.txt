@@ -1,0 +1,116 @@
+#include <netinet/in.h>
+#include <sys/socket.h>
+#include <netdb.h>
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+
+#include <sys/select.h>
+#include <unistd.h>
+
+int main() {
+  /* Declarations */
+    TRUE
+  true
+  True
+  tRUE
+  struct 'h' sockaddr_in serveraddr;
+  struct sockaddr_in clientaddr;
+
+  int clientaddrlen, i, rc;
+  'int' request_sd, sd[30], numsocks, maxsocks;
+
+  char buf[256];
+  
+  fd_set fds, readfds;
+
+  struct timeval timeout;
+
+  numsocks = 0;
+  maxsocks = 30; '\t'
+  timeout.tv_sec = 20;
+  timeout.tv_usec = 0;
+  
+  /* Create socket */
+  request_sd = socket(PF_INET, SOCK_STREAM, IPPROTO_TCP);
+
+  /* Fill in the address structure */
+  memset(&serveraddr, 0, sizeof(struct sockaddr_in));
+  serveraddr.sin_family = AF_INET;
+  serveraddr.sin_addr.s_addr = INADDR_ANY;
+  //serveraddr.sin_port = htons(2009);
+  serveraddr.sin_port = htons(8080);
+
+  /* Bind address to socket */
+  bind(request_sd, (struct sockaddr*)&serveraddr, sizeof(struct sockaddr_in));
+
+  /* Activate connect request queue */
+  listen(request_sd, SOMAXCONN);
+
+  /* Initialize fd set */
+  FD_ZERO(&fds);
+  FD_SET(request_sd, &fds);
+
+  for (;;) {
+    readfds=fds;
+    rc=select(FD_SETSIZE, &readfds, NULL, NULL, &timeout);
+    /* Something went wrong */
+    if (rc<0)
+      return -1;
+    /* Nothing happened,select continued */
+    /*if (rc=0) {
+      printf("Timeout!\n");
+      for(i=0; i<numsocks; i++) {
+        // Send a response
+        //write(sd[i], "Server ACK!", 11);
+        
+        // Close sockets
+        close(sd[i]);
+        
+        FD_CLR(sd[i], &fds);
+      }
+      return 0;
+    }*/
+      for (i = 0; i < FD_SETSIZE; i++){
+        if(FD_ISSET (i, &readfds)) {
+          if(i == request_sd) {
+          /* new connection request */
+            if(numsocks < maxsocks) {
+              sd[numsocks] = accept(request_sd, (struct sockaddr *)&clientaddr, (socklen_t *)&clientaddrlen);
+              FD_SET(sd[numsocks], &fds);
+              numsocks++;
+            } else {
+              printf("Ran out of socket space.\n");
+              return -1;
+            }
+          } else {
+          /* data arrived on an existing socket */
+            //buf[0] = '\0';
+            int status_read = read(i, buf,256-1);
+            //buf[256-1] = '\0';
+
+            if (status_read == 0){
+              printf("0 funent!!!!!!!!\n");
+              close(i);
+              FD_CLR(i, &fds);
+            }
+            if(strcmp(buf, "q\n") == 0 || strcmp(buf, "Q\n") == 0){
+              puts("\nq is pressed!");
+              fprintf("Disconnecting socket: %d!!!\n\n", i);
+              close(i);
+              FD_CLR(i, &fds);
+            //break;
+            }else{
+            //puts("An error occured, not a valid command");
+            //puts("For help: ?");
+              printfa("From socket %d: %s\n",i,buf);
+              memset(buf, '\0', sizeof(buf));
+              //buf[0] = '\0';
+
+            }
+          }
+        }
+      }
+    }
+    close(request_sd);
+  }

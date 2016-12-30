@@ -1,0 +1,82 @@
+\documentclass[a4paper]{article}
+
+% Import some useful packages
+\usepackage[margin=0.5in]{geometry} % narrow margins
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\definecolor{LightGray}{gray}{0.95}
+
+\title{Peer-review of assignment 4 for \textit{INF3331-dawoodah }}
+\author{Reviewer 1, sebastgj, {seb.gjertsen@gmail.com} \\
+ 		Reviewer 2, ferdinae, {ferdinae@ulrik.uio.no} \\
+		Reviewer 3, nithusht, {nithusht@ulrik.uio.no}}
+
+\begin{document}
+\maketitle
+
+\section{Review} \label{sec:review}
+
+Linux with Python 3.5 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{General feedback}
+Could improve the structure of the code and use function.
+Zero docstrings implemented.
+Numbers in the mandelbrotset should be black. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 4.1: Python implementation}
+Satisfactory solution. Set lower default values to lower first runtime. Reviewers were very impatient. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 4.2:  numpy implementation} \label{sec:assignment5.2}
+
+\begin{itemize}
+  \item Satisfactory code. 
+  \item Nice runtime 
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 4.3: Integrated C implementation}
+\begin{itemize}
+  \item Just about satisfactory
+  \item Loops not fully optimized
+  \item Could have used more Cython code 
+  \item Cpdef instead of def calculate()
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 4.4:  An alternative integrated C implementation}
+Not implemented
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 4.5: User interface}
+\begin{itemize}
+\item Just about acceptable.
+\item Not user friendly enough.  
+\item Does not take filename as argument, hence not saving to file. 
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 4.6:  Packaging and unit tests}
+Not implemented 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 4.7: More color scales + art contest}
+\begin{itemize}
+\item Acceptable
+\item Could be wrapped in earlier functions, not run as command
+\end{itemize}
+\subsection*{Assignment 4.8: Self replication}
+Acceptable
+
+\bibliographystyle{plain}
+\bibliography{literature}
+
+\end{document}

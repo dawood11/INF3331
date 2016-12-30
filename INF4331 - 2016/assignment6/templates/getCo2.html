@@ -1,0 +1,38 @@
+<!doctype html>
+<title>co2</title>
+<u><h2>co2</h2></u>
+<a href="/">Back home</a>
+
+{% if error %}
+	<p style="color:red">{{ error }}</p>
+{% endif %}
+
+<td>
+	<form action="handle_co2form", method="POST">
+		<br>
+		Start year
+		<select name="start">
+			{% for tuple in co2List[1:] %}
+				<option value="{{ tuple[0] }}">{{ tuple[0] }}</option>
+			{% endfor %}
+		</select>
+		<br>
+		End year
+		<select name="end">
+			{% for tuple in co2List[1:] %}
+				<option value="{{ tuple[0] }}">{{ tuple[0] }}</option>
+			{% endfor %}
+		</select>
+		<br>
+		Minimum carbon <input type="text" name="min">
+		<br>
+		Maximum carbon <input type="text" name="max">
+		<br>
+		<br>
+		<input type="submit" value="Search">
+		<br>
+		<br>
+	</form>
+</td>
+
+<img src={{name}}>

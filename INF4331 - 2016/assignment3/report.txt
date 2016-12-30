@@ -1,0 +1,5 @@
+Et av de tre testene mislykkes fordi n(num_rechecks) på første rad i matrisen er 0
+(n(num_rechecks) = 0)
+Grunnen bak det, er rett og slett pga 0 tallet i matrisen.
+4 + 7 blir utført 0 ganger, dvs 4 + 7 blir aldri beregnet og res,
+står der igjen med et spørsmålstegn og venter på et svar den aldri kommer til å få.

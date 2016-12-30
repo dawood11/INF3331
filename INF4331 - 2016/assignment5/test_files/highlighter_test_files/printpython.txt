@@ -1,0 +1,49 @@
+class fbhdk:
+import sys
+sys import
+
+#djhsdbfkjb classeh sdjhfbimport kjdhfbsdhu
+ldhjgflh importdjclass hfgbkdhfb khdfgvkd
+khjfdg class: jg#import
+ls'kjdfb'gk dlkfjbgl &&import fdkbgd
+kjdhfgkdjfgk "imp"ort# kdfbhkdugf
+for x in lines:
+fora x in lines:
+afor in lines
+kfhjgdfhgliud import kudfhgkudfg
+
+True
+
+f = False
+
+kjgn dfuihdf None
+
+Try:
+	dsfgd
+	dfgd
+Except, e:
+	lkfgndlkfn
+	fgkljdhsfogi
+
+
+try       :
+	dsfgd
+	dfgd
+exceptjhdbfgjh,bvd, e:
+except, e:
+	lkfgndlkfn
+	fgkljdhsfogi
+
+print()
+print ()
+
+NNNN Nayt(h"""on""" is a very / simple progra(mming language.
+print(NNNN The only statement is the print statement.)
+NNNN Comments are """started with
+
+
+jdbfgb
+dfgliudhfg 
+four Ns""".
+
+print(hello)          NNNN prints hello

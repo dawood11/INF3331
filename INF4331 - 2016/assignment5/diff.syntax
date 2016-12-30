@@ -1,0 +1,3 @@
+"\bo\s.*(?:$|\n)": match
+"\b-\s.*(?:$|\n)": deleted
+"\b\+\s.*(?:$|\n)": added

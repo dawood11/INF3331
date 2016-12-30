@@ -1,0 +1,4 @@
+report2.txt
+Den blir raskere enn mandelbrot_1 ettersom alle elementene i arrayene blir behandlet samtidig enn hver for seg.
+Tiden varierer fra maskin til maskin.
+På min Mac tar oppg.

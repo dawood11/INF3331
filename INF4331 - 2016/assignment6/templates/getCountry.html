@@ -1,0 +1,38 @@
+<!doctype html>
+<title>CO2_by_country</title>
+<u><h2>CO2_by_country</h2></u>
+<a href="/">Back home</a>
+
+{% if error %}
+	<p style="color:red">{{ error }}</p>
+{% endif %}
+
+<td>
+	<form action="handle_countryform", method="POST">
+		<br>
+		Start year
+		<select name="start">
+			{% for element in countryList[0][4:] %}
+				<option value="{{ element }}">{{ element }}</option>
+			{% endfor %}
+		</select>
+		<br>
+		End year
+		<select name="end">
+			{% for element in countryList[0][4:] %}
+				<option value="{{ element }}">{{ element }}</option>
+			{% endfor %}
+		</select>
+		<br>
+		Minimum carbon <input type="text" name="min">
+		<br>
+		Maximum carbon <input type="text" name="max">
+		<br>
+		<br>
+		<input type="submit" value="Search">
+		<br>
+		<br>
+	</form>
+</td>
+
+<img src={{name}}>

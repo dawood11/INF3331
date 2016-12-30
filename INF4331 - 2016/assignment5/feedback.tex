@@ -1,0 +1,76 @@
+\documentclass[a4paper]{article}
+
+% Import some useful packages
+\usepackage[margin=0.5in]{geometry} % narrow margins
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{minted}
+\usepackage{amsmath}
+\usepackage{xcolor}
+\definecolor{LightGray}{gray}{0.95}
+
+\title{Peer-review of assignment 5 for \textit{INF3331-dawoodah}}
+\author{Reviewer 1, tobiasgm, {tobiasgm@student.matnat.uio.no} 
+\\ Reviewer 2, sebastgj, {sebastgj@student.matnat.uio.no} 
+\\ Reviewer 3, ferdinae, {ferdinae@ulrik.uio.no}}
+
+\begin{document}
+\maketitle
+
+\section{Review \emph{}}\label{sec:review}
+
+Reviewed with: Python version 3.5 (Homebrew) on MacBook Pro El Capitan
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{General feedback}
+Overall a good solution with some problems as described below. Some general advice:
+\begin{itemize}
+  \item Would have been nice with a README with instructions on how to test the code.
+  \item You could improve your docstrings by including information about prameter and return values (in a way that allows automatic generation of code documentation).
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 5.1: Syntax highlighting}
+\begin{itemize}
+  \item Code is working as expected. Handles wrong cl-arguments well. Assumes well formatted syntax/ theme files.
+  \item Well documented code, using docstrings. Remember to put all docstrings below the function/ class def they belong to.
+  \item Well writtten, easily readable code broken up in functions in a sensible manner.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 5.2: Python syntax} \label{sec:assignment5.2}
+\begin{itemize}	
+  \item The regular expression seem to work as expected.	
+  \item Two different color themes that work as expected.
+  \item Possible improvements: You only match one possible way to write strings in python. Would have been nice with a regex that matched all variants of strings with single or double quotes. I think the regex would fail with some special cases like an escaped quote inside a string.
+ \item The variable regex matches operators as well (for example (a == b).
+ \item Would have been nice with coloring of some larger parts of relevant expressions, not only keywords like if, else class, but the whole construct.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 5.3: Syntax for your favorite language}
+9 regex that cover different parts of the C language. As for 5.2, it would have been nice with some longer expressions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 5.4: Syntax for your second favorite language}
+8 regex that cover different parts of the JAVA language. As for 5.2, it would have been nice with some longer expressions.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 5.5: superdiff}
+\begin{itemize}
+  \item Some issues: Doesn`t handle several edge cases: Different lengths for input/ output files, removing a line and re-inserting the same line at some other place. Do a search for "longest common subsequence" problem for a possible solution.
+    \item Missing some documentation/ comments on how the code is structured. Otherwise ok code apart from the issues mentioned.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Assignment 5.6:  Coloring diff}
+Regex and theme implemented correctly.\\
+
+- It would have been nicer if the output was colored automatically when mydiff.py is called. So that 5.5 and 5.6 is run more like one program.
+
+
+\bibliographystyle{plain}
+\bibliography{literature}
+
+\end{document}

@@ -1,0 +1,10 @@
+"\bclass\s": class
+"(\A|\s)import\s": import
+"\"{3}(.|\n)*?\"{3}|#.*(?:$|\n)": comments
+"[\A\s]for\b": for
+"[\A\s]while\b": while
+"[\A\s](if|elif|else)\b": if/elif/else
+"[\A\s]print": print
+"\b(True|False|None)\b": True/False/None
+"[\A\s](except|try)\b": try\except
+"\b\w*.=": variable

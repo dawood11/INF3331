@@ -1,0 +1,46 @@
+<!doctype html>
+<title>temperature</title>
+<u><h2>temperature</h2></u>
+<a href="/">Back home</a>
+
+
+{% if error %}
+	<p style="color:red">{{ error }}</p>
+{% endif %}
+
+<td>
+	<form action="handle_temperatureform", method="POST">
+		<br>
+		Month
+		<select name="month">
+			{% for tuple in temperatureList[0][1:] %}
+				<option value="{{ tuple }}">{{ tuple }}</option>
+			{% endfor %}
+		</select>
+		<br>
+		Start year
+		<select name="start">
+			{% for tuple in temperatureList[1:] %}
+				<option value="{{ tuple[0] }}">{{ tuple[0] }}</option>
+			{% endfor %}
+		</select>
+		<br>
+		End year
+		<select name="end">
+			{% for tuple in temperatureList[1:] %}
+				<option value="{{ tuple[0] }}">{{ tuple[0] }}</option>
+			{% endfor %}
+		</select>
+		<br>
+		Minimum temperature <input type="text" name="min">
+		<br>
+		Maximum temperature <input type="text" name="max">
+		<br>
+		<br>
+		<input type="submit" value="Search">
+		<br>
+		<br>
+	</form>
+</td>
+
+<img src={{name}}>
